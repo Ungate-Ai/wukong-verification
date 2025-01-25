@@ -1,0 +1,56 @@
+x-othentic-cli: &othentic-cli
+  env_file:
+    - path: ./.env
+      required: true
+  build:
+    context: .
+    dockerfile: ./Dockerfile
+services:
+  attester:
+    <<: *othentic-cli
+    command: [
+      "node",
+      "attester",
+      "/ip4/198.13.35.119/tcp/9876/p2p/${OTHENTIC_BOOTSTRAP_ID}",
+      "--avs-webapi",
+      "http://10.1.0.42",
+      "--l1-chain", "mainnet",
+      "--l2-chain", "base",
+    ]
+    environment:
+      - PRIVATE_KEY=${PRIVATE_KEY_ATTESTER:-${PRIVATE_KEY_VALIDATOR1:-}}
+      - TASK_PERFORMER=0x0000000000000000000000000000000000000000
+      - OPERATOR_ADDRESS=${OPERATOR_ADDRESS}
+    networks:
+      p2p:
+        ipv4_address: 10.1.0.2
+
+  #avs-webapi:
+  #  build:
+  #    context: ./AVS_WebAPI
+  #    dockerfile: ./Dockerfile
+  #  env_file:
+  #    - .env
+  #  networks:
+  #    p2p:
+  #      ipv4_address: 10.1.0.42
+
+  avs-webapi:
+    build:
+      context: ./AVS_WebAPI
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "4002:4002"
+    networks:
+      p2p:
+        ipv4_address: 10.1.0.42
+
+networks:
+  p2p:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.1.0.0/16
+         gateway: 10.1.0.1
