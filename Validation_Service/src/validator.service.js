@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 const crypto = require('crypto');
 const path = require('path');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-const { downloadFromLighthouse } = require('./dal.service');
+const { downloadFromLighthouse, verifySignature } = require('./dal.service');
 
 class FileVerifier {
     constructor(tempDir, publicKeyPath) {
@@ -29,7 +29,7 @@ class FileVerifier {
             const content = await fs.readFile(tempLogPath);
             const publicKey = await fs.readFile(this.publicKeyPath);
 
-            const isValid = await this.verifySignature(content, signature.trim(), publicKey);
+            const isValid = await verifySignature(content, signature.trim(), publicKey);
 
             // Cleanup
             await fs.unlink(tempLogPath).catch(console.error);
@@ -48,10 +48,3 @@ class FileVerifier {
 }
 
 module.exports = FileVerifier;
-
-// Usage example:
-/*
-const verifier = new FileVerifier('./temp', './keys/public.pem');
-const result = await verifier.verify('logCidHere', 'base64EncodedSignature');
-console.log(result);
-*/
