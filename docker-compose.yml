@@ -20,9 +20,6 @@ services:
     environment:
       - PRIVATE_KEY=${PRIVATE_KEY_ATTESTER:-${PRIVATE_KEY_VALIDATOR1:-}}
       - TASK_PERFORMER=0x0000000000000000000000000000000000000000
-    depends_on:
-      aggregator:
-        condition: service_started
     networks:
       p2p:
         ipv4_address: 10.8.0.2
