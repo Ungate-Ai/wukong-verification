@@ -2,6 +2,16 @@ const fs = require('fs/promises');
 const crypto = require('crypto');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
+
+function init() {
+  console.log("init");
+  // rpcBaseAddress = process.env.OTHENTIC_CLIENT_RPC_ADDRESS;
+  // privateKey = process.env.PRIVATE_KEY_PERFORMER;
+  lightHouseApiKey = process.env.LIGHTHOUSE_API_KEY;
+  //client = new DisperserClient(EIGEN_ENDPOINT, grpc.credentials.createSsl());
+  
+}
+
 async function downloadFromLighthouse(cid, targetPath) {
   try {
       const response = await fetch(`https://gateway.lighthouse.storage/ipfs/${cid}`);
@@ -36,6 +46,7 @@ async function verifySignature(content, signature, publicKey) {
 }
 
 module.exports = {
+  init,
   downloadFromLighthouse,
   verifySignature
 }

@@ -1,0 +1,94 @@
+Attaching to aggregator-1, attester-1, syncer-1, validation-service-1
+validation-service-1  | init
+validation-service-1  | Server started on port: 4002
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] Starting Nest application...
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] Starting Nest application...
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] Starting Nest application...
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] oLt dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] iJu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] iHu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] OAu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] T3u dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] bCu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] yJu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] oLt dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] nHu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] iJu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] iHu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] M3u dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] vBu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] OAu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] s6u dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] M3u dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] T3u dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] bCu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] yJu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] nHu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] M3u dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] vBu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] s6u dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] M3u dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] oLt dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] iJu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] iHu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] OAu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] T3u dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] bCu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] yJu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] nHu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] M3u dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] vBu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] s6u dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] M3u dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] rHu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] rHu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] zGu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] tHu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] WGu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] zGu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] $Gu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] tHu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] WGu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] $Gu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] rHu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] zGu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] tHu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] WGu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] $Gu dependencies initialized
+attester-1            | [2025-02-06 17:11:55] [[32minfo[39m] aJu dependencies initialized
+syncer-1              | [2025-02-06 17:11:55] [[32minfo[39m] aJu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:55] [[32minfo[39m] aJu dependencies initialized
+aggregator-1          | [2025-02-06 17:11:57] [[32minfo[39m] L1 RPC: https://newest-powerful-layer.ethereum-holesky.quiknode.pro/b2830f221962aadfa97af98e4dd3b61f0a9a2559
+aggregator-1          | [2025-02-06 17:11:57] [[32minfo[39m] L2 RPC: https://sepolia.base.org
+attester-1            | [2025-02-06 17:11:58] [[32minfo[39m] Starting p2p process with agent version othentic-cli/1.7.3 js-libp2p/2.5.0
+attester-1            | [2025-02-06 17:11:58] [[32minfo[39m] Running node with peer list
+attester-1            | [2025-02-06 17:11:58] [[32minfo[39m] Listening on the following addresses: 
+attester-1            | [2025-02-06 17:11:58] [[32minfo[39m] undefined
+attester-1            | [2025-02-06 17:11:59] [[32minfo[39m] Operator now active, with ID 2 and share amount 500001114300040830
+attester-1            | [2025-02-06 17:11:59] [[32minfo[39m] Connected to AVS WebAPI at: http://172.16.0.42:4002
+aggregator-1          | [2025-02-06 17:11:59] [[32minfo[39m] Starting p2p process with agent version othentic-cli/1.7.3 js-libp2p/2.5.0
+aggregator-1          | [2025-02-06 17:11:59] [[32minfo[39m] Running a bootstrap node
+aggregator-1          | [2025-02-06 17:11:59] [[32minfo[39m] Metrics server running at http://0.0.0.0:6060/
+aggregator-1          | [2025-02-06 17:11:59] [[32minfo[39m] Listening on the following addresses: 
+aggregator-1          | [2025-02-06 17:11:59] [[32minfo[39m] undefined
+aggregator-1          | [2025-02-06 17:11:59] [[32minfo[39m] JSON-RPC server started, listening on port
+aggregator-1          | [2025-02-06 17:11:59] [[32minfo[39m] Connected to peer: 12D3KooWH3HFfJCRdXS3u2YCtf57ipTAgpgFhKVAeaq6BFZEVjiZ
+aggregator-1          | [2025-02-06 17:11:59] [[32minfo[39m] Peer count: 0
+attester-1            | [2025-02-06 17:11:59] [[32minfo[39m] Connected to peer: 12D3KooWBNFG1QjuF3UKAKvqhdXcxh9iBmj88cM5eU2EK5Pa91KB
+attester-1            | [2025-02-06 17:11:59] [[32minfo[39m] Peer count: 1
+aggregator-1          | [2025-02-06 17:12:20] [[32minfo[39m] RPC request:
+aggregator-1          | [2025-02-06 17:12:20] [[32minfo[39m] Response:
+attester-1            | [2025-02-06 17:12:20] [[32minfo[39m] New message received: proof of task: bafkreibiclw7gm4yefyjn7zgi62gdupmb7sbherp5ma2qic2dvb3gvtchi with definitionId: 0
+validation-service-1  | Validate task: proof of task: bafkreibiclw7gm4yefyjn7zgi62gdupmb7sbherp5ma2qic2dvb3gvtchi
+validation-service-1  | Validate task: data: 0x
+attester-1            | [2025-02-06 17:12:20] [[32minfo[39m] signing pubkey: 354f56aacb906ce47f31b61c735c29af4953bfab0f0cc5a5f5e6cb7921a887121a5cca580f20ad2e3ebd1b23c16929fadf3a70501ddb1c1bd355f6a5f8f2948b
+attester-1            | [2025-02-06 17:12:20] [[32minfo[39m] signed
+aggregator-1          | [2025-02-06 17:12:21] [[32minfo[39m] New message received signature: 0x1e4511c134776115266b92526136634ca4e4a1bb58060900186d66f663db52f2, 0x04cf6c9918d82aab132894175557d59f9df58b24701f91facb7b72c6735821bb
+aggregator-1          | [2025-02-06 17:12:21] [[32minfo[39m] Adding attestation for task with label: 0xb2c6e0943129110abf3353c8a89d799ba3180446e09074577f29a0aa0d2bb55b_true
+aggregator-1          | [2025-02-06 17:12:21] [[32minfo[39m] Aggregating attestation into 0xb2c6e0943129110abf3353c8a89d799ba3180446e09074577f29a0aa0d2bb55b_true
+aggregator-1          | [2025-02-06 17:12:22] [[32minfo[39m] Submitting task signed by operators: 2
+aggregator-1          | [2025-02-06 17:12:23] [[32minfo[39m] Task with proofOfTask:bafkreibiclw7gm4yefyjn7zgi62gdupmb7sbherp5ma2qic2dvb3gvtchi has been approved and submitted, tx: 0x03eade9f3bbed650ce25e2ad36541bb8863d80cd8705c6a733065a7d441dafff
+aggregator-1          | [2025-02-06 17:58:10] [[32minfo[39m] RPC request:
+aggregator-1          | [2025-02-06 17:58:10] [[32minfo[39m] Response:
+aggregator-1          | [2025-02-06 20:16:39] [[32minfo[39m] RPC request:
+aggregator-1          | [2025-02-06 20:16:39] [[32minfo[39m] Response:
