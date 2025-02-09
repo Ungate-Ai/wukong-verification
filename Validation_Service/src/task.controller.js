@@ -3,14 +3,17 @@ const { Router } = require("express")
 const CustomError = require("./utils/validateError");
 const CustomResponse = require("./utils/validateResponse");
 const {FileVerifier} = require("./validator.service");
+const { ethers } = require('ethers');
 
 const router = Router()
 
 router.post("/validate", async (req, res) => {
     var proofOfTask = req.body.proofOfTask;
     var data = req.body.data;
+    const decodedJsonString = ethers.toUtf8String(ethers.getBytes(paramData));
     console.log(`Validate task: proof of task: ${proofOfTask}`);
     console.log(`Validate task: data: ${data}`);
+    console.log(`Validate task: decodedJsonString: ${decodedJsonString}`);
     
     try {
         return res.status(200).send(new CustomResponse(true));

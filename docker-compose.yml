@@ -35,6 +35,8 @@ services:
         ipv4_address: 172.16.0.6  
   attester:
     <<: *othentic-cli
+    depends_on:
+      - aggregator
     command: [
       "node",
       "attester",
