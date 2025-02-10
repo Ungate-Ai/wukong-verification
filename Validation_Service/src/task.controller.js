@@ -14,10 +14,9 @@ router.post("/validate", async (req, res) => {
     const decodedJsonString = ethers.toUtf8String(ethers.getBytes(paramData));
     console.log(`Validate task: proof of task: ${proofOfTask}`);
     console.log(`Validate task: data: ${data}`);
-    console.log(`Validate task: decodedJsonString: ${decodedJsonString}`);
-
     try {
         // return res.status(200).send(new CustomResponse(true));
+
         const validatorService = new FileVerifier(process.env.TEMP_DIR, process.env.PUBLIC_KEY_PATH);
         const result = await validatorService.verify(proofOfTask, data);
         if(result && result.isValid){

@@ -33,14 +33,16 @@ async function downloadFromLighthouse(cid, targetPath) {
 
 async function verifySignature(content, signature, publicKey) {
   try {
-    const verify = crypto.createVerify('SHA256')
-    verify.update(content)
-    verify.end()
-
-    const bufferSignature = Buffer.from(signature, 'hex');
-    return verify.verify(publicKey, bufferSignature);
+    console.log("Starting verification");
+    const decodedSignature = Buffer.from(signature.toString('utf-8'), 'base64');
+    const verify = crypto.createVerify('SHA256');
+    verify.update(content); 
+    verify.end();
+    const isValid = verify.verify(publicKey, decodedSignature);
+    console.log("Verification Result:", isValid);
+    return isValid;
   } catch (error) {
-    console.error('Verification error:', error);
+    console.error("Verification error:", error);
     return false;
   }
 }
