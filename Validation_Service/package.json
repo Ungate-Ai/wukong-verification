@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/axios": "^0.14.0",
+    "asn1.js": "^5.4.1",
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",

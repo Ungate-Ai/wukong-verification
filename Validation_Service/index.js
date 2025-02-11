@@ -12,11 +12,10 @@ app.listen(PORT, () => console.log("Server started on port:", PORT))
 // async function TestVerification() {
 //     try {
 //         const request = {
-//             proofOfTask: "",
 //             data: ""
 //         };
-//         const { proofOfTask, data } = request;
-//         if (!proofOfTask || !data) {
+//         const { data } = request;
+//         if (!data) {
 //             throw new Error('Missing required parameters');
 //         }
 //         const decodedJsonString = ethers.toUtf8String(ethers.getBytes(data));
@@ -25,7 +24,8 @@ app.listen(PORT, () => console.log("Server started on port:", PORT))
 //             process.env.TEMP_DIR,
 //             process.env.PUBLIC_KEY_PATH
 //         );
-//         const result = await validatorService.verify(proofOfTask, data,decodedData?.publicIp, decodedData?.sigIpfsHash);
+//         console.log(decodedData)
+//         const result = await validatorService.verify(decodedData?.proofOfTask, decodedData?.publicIp, decodedData?.sigIpfsHash);
 //         if (!result) {
 //             throw new Error('Verification failed');
 //         }

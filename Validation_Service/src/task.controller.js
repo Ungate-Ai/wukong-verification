@@ -2,30 +2,32 @@
 const { Router } = require("express")
 const CustomError = require("./utils/validateError");
 const CustomResponse = require("./utils/validateResponse");
-const {FileVerifier} = require("./validator.service");
+const { FileVerifier } = require("./validator.service");
 const { ethers } = require('ethers');
 
 const router = Router()
 
 router.post("/validate", async (req, res) => {
-    var proofOfTask = req.body.proofOfTask;
     var data = req.body.data;
-    // machine public IP
-    const decodedJsonString = ethers.toUtf8String(ethers.getBytes(paramData));
-    console.log(`Validate task: proof of task: ${proofOfTask}`);
-    console.log(`Validate task: data: ${data}`);
     try {
-        // return res.status(200).send(new CustomResponse(true));
-
-        const validatorService = new FileVerifier(process.env.TEMP_DIR, process.env.PUBLIC_KEY_PATH);
-        const result = await validatorService.verify(proofOfTask, data);
-        if(result && result.isValid){
-            console.log('Vote:', result ? 'Approve' : 'Not Approved');
-            return res.status(200).send(new CustomResponse(result));
+        if (!data) {
+            throw new Error('Missing required parameters');
         }
-        else{
-            return res.status(400).send(new CustomError("Invalid signature", {}));
+        const decodedJsonString = ethers.toUtf8String(ethers.getBytes(data));
+        const decodedData = JSON.parse(decodedJsonString)
+        const validatorService = new FileVerifier(
+            process.env.TEMP_DIR,
+            process.env.PUBLIC_KEY_PATH
+        );
+        console.log(decodedData)
+        const result = await validatorService.verify(decodedData?.proofOfTask, decodedData?.publicIp, decodedData?.sigIpfsHash);
+        if (!result) {
+            throw new Error('Verification failed');
         }
+        if (result.isValid) {
+            console.log("Valid")
+        }
+        
     } catch (error) {
         console.log(error)
         return res.status(500).send(new CustomError("Something went wrong", {}));
