@@ -64,13 +64,12 @@ class FileVerifier {
 
 async function getAttestationPublicKey(publicIp) {
     try {
-        const verifierUrl = `http://${publicIp}:1400`;
-        console.log(verifierUrl)
+        const verifierUrl = `http://${publicIp}:1301/attestation/raw`;
         const response = await axios.post(
             "https://attestation_proxy_verifier.justfortesting.me/v1/enclave",
             {
-                attestation_utility_url: "http://api.deepworm.xyz/attestation/raw",
-                verifier_ip: `${verifierUrl}`
+                attestation_utility_url: `${verifierUrl}`,
+                verifier_ip: "http://13.201.207.60:1400"
             },
             {
                 headers: {
