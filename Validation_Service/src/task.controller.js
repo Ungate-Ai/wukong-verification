@@ -21,13 +21,14 @@ router.post("/validate", async (req, res) => {
         );
         console.log(decodedData)
         const result = await validatorService.verify(decodedData?.proofOfTask, decodedData?.publicIp, decodedData?.sigIpfsHash);
-        if (!result) {
-            throw new Error('Verification failed');
+
+        if(result && result.isValid){
+            console.log('Vote:', result ? 'Approve' : 'Not Approved');
+            return res.status(200).send(new CustomResponse(result));
         }
-        if (result.isValid) {
-            console.log("Valid")
+        else{
+            return res.status(400).send(new CustomError("Invalid signature", {}));
         }
-        
     } catch (error) {
         console.log(error)
         return res.status(500).send(new CustomError("Something went wrong", {}));

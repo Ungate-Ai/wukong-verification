@@ -4,6 +4,9 @@ const { downloadFromLighthouse, verifySignature } = require('./dal.service');
 const axios = require("axios")
 const asn1 = require('asn1.js');
 const Buffer = require('buffer').Buffer;
+const EC = require('elliptic').ec;
+const ec = new EC('secp256k1');
+
 
 const ECPublicKey = asn1.define('ECPublicKey', function() {
   this.seq().obj(
@@ -39,16 +42,13 @@ class FileVerifier {
             }
             const sigContent = await fs.readFile(tempSigLogPath) //-> read from lighthouse
             const content = await fs.readFile(tempLogPath) //-> read from lighthouse
-            console.log(publicIp, "Public IP")
-            const attestationResponse = await getAttestationPublicKey(publicIp) // get the public Key from attestation API
-            publicKey = attestationResponse?.verified_attestation?.secp256k1_public
-            publicKey = convertToPEM(publicKey);
-            console.log(publicKey)
-//             publicKey = `-----BEGIN PUBLIC KEY-----
 
-// -----END PUBLIC KEY-----` // using local pub key for testing
-            const isValid = await verifySignature(content, sigContent, publicKey);
-            await fs.unlink(tempLogPath).catch(console.error);
+            const attestationResponse = await getAttestationPublicKey(publicIp) // get the public Key from attestation API
+            
+            const publicKey = "04" + `${attestationResponse}`;
+            const pubKey = ec.keyFromPublic(publicKey, 'hex')
+            const isValid = await verifySignature(content, sigContent, pubKey);
+            await fs.unlink(tempLogPath).catch(console.error)
             return {
                 success: true,
                 isValid,
@@ -79,7 +79,7 @@ async function getAttestationPublicKey(publicIp) {
                 }
             }
         );
-        return response?.data;
+        return response?.data?.parsed_attestation?.public_key;
     } catch (error) {
         console.log("Attestation URL Issue")
         throw error;
@@ -109,4 +109,4 @@ function convertToPEM(pubKeyHex) {
     
     return pem;
   }
-module.exports = { FileVerifier };
+module.exports = { FileVerifier, getAttestationPublicKey };
