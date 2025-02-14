@@ -34,11 +34,6 @@ services:
     networks:
       p2p:
         ipv4_address: 172.16.0.42
-
-
-volumes:
-  grafana-storage: {}
-
 networks:
   p2p:
     driver: bridge
