@@ -8,8 +8,6 @@ x-othentic-cli: &othentic-cli
 services:
   attester:
     <<: *othentic-cli
-    depends_on:
-      - aggregator
     command: [
       "node",
       "attester",
