@@ -8,12 +8,10 @@ x-othentic-cli: &othentic-cli
 services:
   attester:
     <<: *othentic-cli
-    depends_on:
-      - aggregator
     command: [
       "node",
       "attester",
-      "/ip4/172.16.0.69/tcp/9876/p2p/${OTHENTIC_BOOTSTRAP_ID}",
+      "/ip4/104.238.148.107/tcp/9876/p2p/${OTHENTIC_BOOTSTRAP_ID}",
       "--avs-webapi",
       "http://172.16.0.42",
       "--l1-chain", "holesky",
