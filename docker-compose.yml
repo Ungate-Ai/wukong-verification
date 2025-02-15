@@ -1,4 +1,3 @@
-version: '3.7'
 x-othentic-cli: &othentic-cli
   env_file:
     - .env
