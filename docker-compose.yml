@@ -15,12 +15,13 @@ services:
       "http://172.16.0.42",
       "--l1-chain", "holesky",
       "--l2-chain", "base-sepolia",
+      "--p2p.datadir", "data/peerstore/wukong-attester"
     ]
     environment:
       - PRIVATE_KEY=${PRIVATE_KEY_ATTESTER}
       - TASK_PERFORMER=0x0000000000000000000000000000000000000000
     volumes:
-      - /app:/app
+      - ./data/peerstore/wukong-attester:/app/data/peerstore/wukong-attester
     networks:
       p2p:
         ipv4_address: 172.16.0.2  
